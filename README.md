@@ -3,9 +3,31 @@
 This website is designed for those who has tech and math background and wants to break into risk modeling in a bank institution. 
 
 
+## Getting Started
+
+To run locally
+```bash
+mkdocs serve -a localhost:8000
+```
+
+Or run with docker on port 8000
+
+```bash
+docker compose up
+```
+
+## Tools
+
+- website generated with mkdocs, dependencies managed with pip in `requirements.txt`
+- ds model managed with micromamba, in `environment.yml`
 
 
 
+## To-do
+
+- [x] woe and iv
+- [ ] deployment of the doc
+- [ ] pd model derivation
 
 ## Reference
 
