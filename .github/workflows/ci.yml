@@ -1,3 +1,4 @@
+Copy code
 name: CI
 
 on:
@@ -9,7 +10,6 @@ on:
 permissions:
   contents: write
 
-# define jobs
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,14 +35,8 @@ jobs:
             mkdocs-material-
 
       - name: Install dependencies
-        run: |
-          pip install mkdocs-material
-          pip install mkdocs-blogging-plugin
-          pip install mkdocs-rss-plugin
-          pip install mkdocs-pymdownx-material-extras
+        run: pip install -r requirements.txt
 
-      # need to move the directory with the mkdocs.yml file to deploy
       - name: Deploy to GitHub Pages
         run: |
-          cd leetcode_with_adam
           mkdocs gh-deploy --force
