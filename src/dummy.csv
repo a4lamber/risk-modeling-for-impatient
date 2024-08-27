@@ -1,0 +1,10 @@
+reference,feature
+grade:'F',grade:'A'
+,grade:'B'
+,grade:'C'
+,grade:'D'
+,grade:'E'
+,grade:'F'
+home_ownership:RENT_OTHER_NONE_ANY,home_ownership:RENT_OTHER_NONE_ANY
+,home_ownership:OWN
+,home_ownership:MORTGAGE

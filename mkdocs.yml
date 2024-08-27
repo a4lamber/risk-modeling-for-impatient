@@ -1,0 +1,85 @@
+# Project information
+site_name: Risk Modeling For the impatient
+site_author: Adam Zhang
+site_description: >-
+  A site for learn risk Modeling for the impatient
+
+theme:
+  name: material
+  # custom_dir: material/overrides
+  features:
+    # - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - announce.dismiss
+    # - content.action.edit
+    # - content.action.view
+    # - content.code.annotate
+    # - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    # - content.tooltips    
+    # - navigation.top
+    # - header.autohide
+    # nav bar的设置 
+    # - navigation.footer
+    # - navigation.indexes
+    # Comment out instant navigation it appears to be in a
+    # bug for latex rendering
+    # - navigation.instant
+    # - navigation.instant.prefetch
+    # - navigation.instant.progress
+    # - navigation.prune
+    - navigation.sections
+    - navigation.expand    
+    - navigation.tracking
+    # - search.highlight
+    # - search.share
+    # - search.suggest
+    # - toc.follow
+    # - toc.integrate
+  # 定义两个颜色theme, 和toggle button
+  palette:
+    - scheme: slate
+      primary: black
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: switch to dark mode
+    - scheme: default
+      primary: white
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: switch to light mode
+
+plugins:
+  - search
+  - tags
+
+# markdown extensions        
+extra:
+  generator: True
+copyright: © 2023 - 2024 Adam Zhang. All rights reserved.
+
+markdown_extensions: 
+  - pymdownx.arithmatex:
+      generic: true 
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Risk Model:
+    - Risk Model 101: risk_model/101.md
+    # - risk_model/index.md
+    - Woe IV: risk_model/woe_iv.md
