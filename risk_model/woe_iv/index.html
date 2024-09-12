@@ -16,6 +16,8 @@
         <link rel="prev" href="../101/">
       
       
+        <link rel="next" href="../pd/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.32">
@@ -477,6 +479,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -705,6 +728,21 @@ z = \omega^{T}x + b
 \ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)} &amp;= \omega^{T}x + b \\
 \end{align}
 \]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span class="arithmatex">\(P\left(y=1 \mid x \right)\)</span>, the probability of an event happening. <span class="arithmatex">\(P\left(y=0 \mid x \right)\)</span>, is the probablity of an event not happening. If we roll a coin and wants head</p>
+<div class="arithmatex">\[
+\begin{align}
+\ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)} &amp;= \frac{0.5}{0.5}
+\end{align}
+\]</div>
+<p>Similarly, if we wish to roll a dice of 6, </p>
+<div class="arithmatex">\[
+\begin{align}
+\ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)} &amp;= \frac{\frac{1}{6}}{\frac{5}{6}}
+\end{align}
+\]</div>
+</div>
 <p>Does it look familiar? the <span class="arithmatex">\(\ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)}\)</span> is a ratio of percentage of good over percentage of bad, which is equal to <span class="arithmatex">\(WoE_i\)</span>. Weight of evidence is just a made-up name that shows this relationship. Then the next of the logistic regression is to determine <span class="arithmatex">\(\omega\)</span> and <span class="arithmatex">\(b\)</span>, which can be solved by</p>
 <ul>
 <li>cross entropy as loss function and gradient descent</li>

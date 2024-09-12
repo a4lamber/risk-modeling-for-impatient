@@ -13,6 +13,8 @@
       
       
       
+        <link rel="prev" href="../woe_iv/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Probability of Default Model - Risk Modeling For the impatient</title>
+        <title>PD - Risk Modeling For the impatient</title>
       
     
     
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#probability-of-default-model" class="md-skip">
+        <a href="#pd-model" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Probability of Default Model
+              PD
             
           </span>
         </div>
@@ -212,10 +214,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../101/" class="md-tabs__link">
           
   
@@ -290,27 +294,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -321,7 +328,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Risk Model
@@ -370,6 +377,76 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    PD
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    PD
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Formulation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -397,6 +474,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mathematical-formulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mathematical Formulation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -410,13 +504,59 @@
                   
 
 
-<h1 id="probability-of-default-model">Probability of Default Model</h1>
-<p>Binary classification can be modelled with logistic regression.</p>
+<h1 id="pd-model">PD Model</h1>
+<p>PD (probability of default) model is a binary classification problem. Let's assume we use logistic regression to solve this problem.</p>
+<h2 id="mathematical-formulation">Mathematical Formulation</h2>
+<p>In this section, we will go over the full derivation of PD model</p>
+<p>First, let's recall linear combination and rewrite it in matrix notation</p>
 <div class="arithmatex">\[
-\begin{equation}
-p(x) = \frac{1}{2}
-\end{equation}
+\begin{align}
+z &amp;= \beta_0x_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_n x_n
+\end{align}
 \]</div>
+<p>We can rewrite linear combination in matrix form,
+$$
+\begin{align}
+z &amp;= \omega^{T}x_i + b
+\end{align}
+$$
+where <span class="arithmatex">\(\omega = {\beta_0 + \beta_1 + \beta_2 + ... + \beta_n}\)</span>, <span class="arithmatex">\(\omega^{T}\)</span> is the transpose of it, <span class="arithmatex">\(b\)</span> is the constant term</p>
+<p>Recall the sigmoid function (logistic function),</p>
+<div class="arithmatex">\[
+\begin{align}
+y(z) = \frac{e^{z}}{1+e^{z}}
+\end{align}
+\]</div>
+<p>As illustrated in the image below</p>
+<p><img alt="" src="https://media.licdn.com/dms/image/D4D12AQGIXdSG7IJCNw/article-cover_image-shrink_600_2000/0/1694183259537?e=2147483647&amp;v=beta&amp;t=OtnfeqwCtKTSVrdKZdyOzNYECyLLZuEUIxkTfTQ0dS0" /></p>
+<p>We can rewrite equation 3 into,</p>
+<div class="arithmatex">\[
+\begin{align}
+y &amp;= \frac{e^{z}}{1+e^{z}}\\
+1- y &amp;= \frac{1+e^{z}}{1 + e^{z}} - \frac{e^{z}}{1+e^{z}}\\
+1- y &amp;= \frac{1}{1+e^{z}}
+\end{align}
+\]</div>
+<p>We can rearrange <span class="arithmatex">\(y\)</span> and <span class="arithmatex">\(1-y\)</span> into its ratio as,</p>
+<div class="arithmatex">\[
+\begin{align}
+\frac{y}{1-y} = \frac{\frac{e^{z}}{1+e^{z}}}{\frac{1}{1+e^{z}}} = e^{z}
+\end{align}
+\]</div>
+<p>We take logarithmic on both side,
+$$
+\begin{align}
+\ln \frac{y}{1-y} = \ln e^{z} = z
+\end{align}
+$$</p>
+<p>We substitute linear combination equ 2 into equ 8, we get</p>
+<p>$$
+\begin{align}
+\ln \frac{y}{1-y} = \omega^{T}x + b \
+\ln \frac{P(y = 1 | x)}{P(y=0|x)} = \beta_0x_0 + \beta_1x_1 + ... + \beta_nx_n
+\end{align}
+$$
+Where <span class="arithmatex">\(P(y=1|x)\)</span> is the probability of an event occur given x.</p>
 
 
 
