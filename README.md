@@ -26,7 +26,7 @@ docker compose up
 ## To-do
 
 - [x] woe and iv
-- [ ] deployment of the doc
+- [x] deployment of the doc
 - [ ] pd model derivation
 
 ## Reference

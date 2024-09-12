@@ -116,6 +116,24 @@ $$
 \end{align}
 $$
 
+!!! note
+    $P\left(y=1 \mid x \right)$, the probability of an event happening. $P\left(y=0 \mid x \right)$, is the probablity of an event not happening. If we roll a coin and wants head
+
+    $$
+    \begin{align}
+    \ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)} &= \frac{0.5}{0.5}
+    \end{align}
+    $$ 
+
+    Similarly, if we wish to roll a dice of 6, 
+    
+    $$
+    \begin{align}
+    \ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)} &= \frac{\frac{1}{6}}{\frac{5}{6}}
+    \end{align}
+    $$  
+
+
 Does it look familiar? the $\ln \frac{P\left(y=1 \mid x \right)}{P\left(y=0 \mid x \right)}$ is a ratio of percentage of good over percentage of bad, which is equal to $WoE_i$. Weight of evidence is just a made-up name that shows this relationship. Then the next of the logistic regression is to determine $\omega$ and $b$, which can be solved by
 
 - cross entropy as loss function and gradient descent
